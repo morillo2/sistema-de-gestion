@@ -7,7 +7,7 @@ from utils.operaciones import (
     contar_libros,
     promedio_paginas,
     agregar_categoria
-)11
+)
 
 continuar = "s"
 
