@@ -26,9 +26,9 @@ def mostrar_disponibles(lista_libros: list[Libro]):
 
        if libro["disponible"]:
             print(
-                f"Titulo: {libro["titulo"]}   -"
-                f"Autor: {libro["autor"]}     -"
-                f"Paginas: {libro["paginas"]}  "
+                f"Titulo: {libro['titulo']}   -"
+                f"Autor: {libro['autor']}     -"
+                f"Paginas: {libro['paginas']}  "
                 )
             buscar = True
     
@@ -47,11 +47,14 @@ def buscar_por_paginas(lista_libros: list[Libro], max_paginas: int):
        if libro["paginas"] < max_paginas:
 
         print(
-            f"Titulo: {libro["titulo"]}   -"
-            f"Autor: {libro["autor"]}     -"
-            f"Paginas: {libro["paginas"]}  "
+            f"Titulo: {libro['titulo']}  -"
+            f"Autor: {libro['autor']}    -"
+            f"Paginas: {libro['paginas']} "
             )
         buscar = True
+
+    if not buscar:
+        print(f"No hay libros con menos de {max_paginas} páginas.")
 
    
 def agregar_categoria(set_categorias: set[str], nueva_categoria: str):
@@ -67,4 +70,5 @@ def agregar_categoria(set_categorias: set[str], nueva_categoria: str):
     if nueva_categoria in set_categorias:
         print("La categoria ya existe")
     else:
-        print(f"Categoria '{nueva_categoria}' agregada")
+        set_categorias.add(nueva_categoria)
+        print(f"Categoria '{nueva_categoria}' agregada debidamente")
